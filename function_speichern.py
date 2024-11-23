@@ -1,6 +1,5 @@
 import keyring as kr
 import os
-import bcrypt as end_encryption
 from cryptography.hazmat.primitives import hashes, hmac
 
 
@@ -11,18 +10,16 @@ def password_encryption(entered_password):
         key = os.urandom(256)
         kr.set_password("Secret","Key",key)
     generated_key = kr.get_password("Secret", "Key").encode("ASCII")
-    h = hmac.HMAC(generated_key, hashes.SHA256())
     entry_toByte = entered_password.encode("ASCII")
+    h = hmac.HMAC(generated_key, hashes.SHA256())
     h.update(entry_toByte)
-    signature = h.finalize()
 
-    #password_hashed = end_encryption.hashpw(signature, end_encryption.gensalt(10))
+    signature = h.finalize()
     return signature.hex()
 
 #Gib eine Liste von allen Benutzern oder Passwörtern abhängig von dem index_to_retrieve aus:
 #  0 = Benutzer
 #  1 = Passwörter
-
 def retrieve_data(index_to_retrieve):
     file_table = []
     hash_users_table = []
@@ -35,12 +32,14 @@ def retrieve_data(index_to_retrieve):
         hash_users_table.append(hash_password)
     return hash_users_table
 
-
+#Überprüft der Benutzername
 def user_verification(username_entered):
     if username_entered in retrieve_data(0):
-        print("User Found")
+        return True
     else:
-        print("User Not Found")
+        return False
+
+#Überprüft der Benutzerpasswort
 def password_verification(password_entered):
     hashed_password = password_encryption(password_entered)
     if hashed_password in retrieve_data(1):
@@ -68,7 +67,7 @@ if __name__ == '__main__':
     if not os.path.exists("users_db.txt"):
         with open("users_db.txt", "w"):
             pass
-
+    #Fügt den neuen Benutzer zur Datei hinzu.
     with open("users_db.txt", "a") as f:
         f.write(f"{user_obj}\n")
     result = password_verification("Thomasuser")
