@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="45151407-1d83-4183-956e-d5c0b3b92764" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Passwortmanagers-f-r-HSNR-Secure-Corp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Passwortmanagers-f-r-HSNR-Secure-Corp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function_speichern.py" beforeDir="false" afterPath="$PROJECT_DIR$/function_speichern.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocked_accounts.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users_db.txt" beforeDir="false" />
