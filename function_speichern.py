@@ -414,7 +414,5 @@ def blocked_account(username):
     with open("blocked_accounts.txt", "a") as f:
         f.write(f"{username}\n")
 
-# Startet das Programm mit dem Hauptmenü
-if __name__ == '__main__':
-    main_menu()
+
 
